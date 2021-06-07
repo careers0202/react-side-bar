@@ -106,7 +106,7 @@ class Home extends Component {
                             <FontAwesomeIcon className="cart-icon" icon={faShoppingCart} />
                         </p>
                         <img src={item.image} alt={item.title} width="100" />
-                        <p>Price: ${item.price}</p>
+                        <p><b>Price: ${item.price}</b></p>
                         <div>
                             <button type="button" className="btn btn-primary" onClick={() => this.addToCart(item)}>Add to cart</button>
                             <button type="button" className="btn btn-warning mx-2" onClick={() => this.updateCart(item)}>update product</button>
