@@ -102,7 +102,7 @@ class Home extends Component {
             <div className="container">
                 {products.map((item, index) => {
                     return (<div className="bg-white my-4 py-4">
-                        <p>{item.title}
+                        <p><b>{item.title}</b>
                             <FontAwesomeIcon className="cart-icon" icon={faShoppingCart} />
                         </p>
                         <img src={item.image} alt={item.title} width="100" />
