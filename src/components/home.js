@@ -108,7 +108,7 @@ class Home extends Component {
                         <img src={item.image} alt={item.title} width="100" />
                         <p>Price: ${item.price}</p>
                         <div>
-                            <button type="button" className="btn btn-primary" onClick={() => this.addToCart(item)}>Add to cart</button>
+                            <button type="button" className="btn btn-danger" onClick={() => this.addToCart(item)}>Add to cart</button>
                             <button type="button" className="btn btn-warning mx-2" onClick={() => this.updateCart(item)}>update product</button>
                             <button type="button" className="btn btn-danger mx-2" onClick={() => this.deleteItem(item)}>Delete product</button>
                         </div>
