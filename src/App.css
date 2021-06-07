@@ -1,0 +1,30 @@
+
+.nav-bar{
+  height: 50px;
+    background: gray;
+    padding: 15px;
+    color: blue;
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-options > p,  .nav-options > p > a {
+    padding: 0 20px;
+  }
+
+.sidebar{
+  width: 200px;
+  background: cadetblue;
+  height: 100vh;
+  padding: 10px;
+  color: white;
+}
+.main-sec {
+  flex: 1;
+  background-color: lightgray;
+}
+
+.cart-icon {
+  color: green;
+  font-size: 20px;
+}
