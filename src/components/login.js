@@ -16,17 +16,15 @@ const Login = (params) => {
 
   const handleSubmit = async (e, values) => {
     const { username, password } = formValues;
-    e.preventDefault()
-
+    e.preventDefault();
     const response = await axios.post('http://127.0.0.1:8081/login', {
       username,
       password
     })
-    console.log({ response })
+
     if (response.status === 200) {
       history.push('/home')
     }
-
   }
   return (
     <div className="d-flex justify-content-center align-items-center login bg-light text-center">

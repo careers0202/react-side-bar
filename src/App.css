@@ -12,6 +12,12 @@
     padding: 0 20px;
   }
 
+.navbar {
+  position: sticky;
+  top: 0;
+  font-style: italic;
+}
+
 .sidebar{
   width: 200px;
   background: #4264b1;
