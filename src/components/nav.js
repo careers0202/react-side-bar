@@ -1,31 +1,30 @@
 import React from 'react';
-import { Link, useHistory  } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { faEdit } from '@fortawesome/free-regular-svg-icons';
+import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+import logo from './trolley.svg'
 
 import '../App.css';
 
 
-function NavBar(){
+function NavBar() {
     let history = useHistory();
 
-    const handlePath  = ()=> {
+    const handlePath = () => {
+
         history.push('/about')
     }
 
-    return(
-        <div className="nav-bar">
-            <div>App logo</div>
-            <div className="d-flex justify-content-between nav-options">
-                <p onClick={()=>handlePath()}>
-                    About link
-                    {/* <Link to="/about">About link</Link> */}
-                    {/* <a href="/about">About</a> */}
-                </p>
-                <p> 
-                    <Link to="/contact">Contact us link</Link>
-                    {/* <a href="/contact">Contact us</a> */}
-                </p>
+    return (
+        <nav class="navbar navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src={logo} alt="" width="30" height="24" class="d-inline-block align-text-top" />
+                        Shooping Cart
+                    </a>
             </div>
-        </div>
+        </nav>
     )
 }
 

@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { faEdit } from '@fortawesome/free-regular-svg-icons';
-import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
+
 import '../comp.css';
 
 class Home extends Component {
@@ -17,25 +15,6 @@ class Home extends Component {
 
 
     async componentDidMount() {
-        //API calls are asynchronus
-        //JSON ---- Array of Objects
-
-        // fetch('https://fakestoreapi.com/products') // GET method
-        //     .then((response) => {
-        //         return response.json();
-        //     })
-        //     .then((data) => {
-        //         this.setState({
-        //             products: data
-        //         })
-        //     })
-
-
-        // const response = await fetch('https://fakestoreapi.com/products');
-        // const data = await response.json();
-        // this.setState({
-        //     products: data
-        // })
 
 
         const response = await axios.get('https://fakestoreapi.com/products') // GET method
@@ -48,31 +27,8 @@ class Home extends Component {
 
 
     async addToCart(item) {
-        // fetch('https://fakestoreapi.com/products', { // Add to cart
-        //     method: "POST",
-        //     body: JSON.stringify(item) //payload
-        // })
-        //     .then(response => response.json())
-        //     .then(data => console.log(data))
-
-
-        // const response = await fetch('https://fakestoreapi.com/products', { // Add to cart
-        //     method: "POST",
-        //     body: JSON.stringify(item) //payload
-        // })
-        // const data = await response.json()
-
-
-
-        // axios.post('https://fakestoreapi.com/products', { item }
-        // )
-        //     .then(data => console.log(data))
-
-
         const { email, password } = this.state;
         const resp = await axios.post('https://fakestoreapi.com/login', { email, password })
-
-
     }
 
 
@@ -99,18 +55,15 @@ class Home extends Component {
     render() {
         const { products } = this.state;
         return (
-            <div className="container">
+            <div className="shopping-container">
                 {products.map((item, index) => {
-                    return (<div className="bg-white my-4 py-4">
-                        <p>{item.title}
-                            <FontAwesomeIcon className="cart-icon" icon={faShoppingCart} />
-                        </p>
+                    return (<div className="bg-white m-4 item p-4">
+                        <p className="font-weight-bold text-muted">{item.title}</p>
                         <img src={item.image} alt={item.title} width="100" />
-                        <p><b>Price: ${item.price}</b></p>
-                        <div>
-                            <button type="button" className="btn btn-primary" onClick={() => this.addToCart(item)}>Add to cart</button>
-                            <button type="button" className="btn btn-warning mx-2" onClick={() => this.updateCart(item)}>update product</button>
-                            <button type="button" className="btn btn-danger mx-2" onClick={() => this.deleteItem(item)}>Delete product</button>
+                        <p className="my-3 font-weight-bold">Price: ${item.price}</p>
+                        <div className="d-flex justify-content-end ">
+                            <button type="button" class="btn btn-link text-secondary">Details</button>
+                            <button type="button" className="btn btn-outline-info addtocart" onClick={() => this.addToCart(item)}>Add to cart</button>
                         </div>
                     </div>)
                 })}

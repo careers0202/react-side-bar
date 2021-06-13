@@ -1,7 +1,7 @@
 
 .nav-bar{
   height: 50px;
-    background: gray;
+    background: floralwhite;
     padding: 15px;
     color: blue;
     display: flex;
@@ -14,7 +14,7 @@
 
 .sidebar{
   width: 200px;
-  background: cadetblue;
+  background: #4264b1;
   height: 100vh;
   padding: 10px;
   color: white;
@@ -27,4 +27,28 @@
 .cart-icon {
   color: green;
   font-size: 20px;
+}
+
+.shopping-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.item {
+  width: 360px;
+  margin: 20px;
+  border-radius: 10px;
+  /* position: relative; */
+}
+.item > p {
+  min-height: 50px;
+}
+.item > img {
+  height: 100px;
+}
+
+.addtocart {
+  /* position: absolute; */
+  bottom: 30px;
+  right: 30px;
 }

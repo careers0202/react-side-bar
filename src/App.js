@@ -30,9 +30,9 @@ class App extends Component {
         <Router>
           <NavBar />
           <div className="d-flex justify-space-between">
-            <div>
+            {/* <div>
               <Sidebar />
-            </div>
+            </div> */}
 
             <div className="text-center main-sec">
               <Switch>
