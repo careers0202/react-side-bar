@@ -12,7 +12,7 @@ import Contact from './components/contact';
 import NotFound from './components/NotFound';
 import NavBar from './components/nav';
 import Transaction from './components/task';
-import Sidebar from './components/sideBar';
+import Cart from './components/cart';
 import Login from './components/login'
 
 class App extends Component {
@@ -20,17 +20,28 @@ class App extends Component {
   constructor() {
     super();
 
-    this.state = {}
+    this.state = {
+      items: []
+    }
 
+  }
+
+
+  addItems = (cartitems) => {
+    this.setState({
+      items: cartitems
+    })
   }
 
   render() {
 
+    const { items } = this.state;
+
     return (
       <div>
         <Router>
-          <NavBar />
-          <div className="d-flex justify-space-between">
+          <NavBar items={items} />
+          < div className="d-flex justify-space-between">
             {/* <div>
               <Sidebar />
             </div> */}
@@ -38,8 +49,14 @@ class App extends Component {
 
             <Switch>
               <Route exact path="/" component={Login} />
-              <Route exact path="/home" component={Home} />
+
+              {/* <Route exact path="/home" component={Home} /> */}
+              <Route exact path="/home" render={() => <Home addItems={(cartitems) => this.addItems(cartitems)} />} />
+
               <Route path="/about" component={About} />
+
+              <Route path="/cart" render={() => <Cart items={items} />} />
+
               <Route path="/contact" component={Contact} />
               <Route path="/transaction/:id/:item" component={Transaction} />
 

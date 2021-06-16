@@ -8,7 +8,7 @@ import logo from './trolley.svg'
 import '../App.css';
 
 
-function NavBar() {
+function NavBar(props) {
     let history = useHistory();
 
     const handlePath = () => {
@@ -30,7 +30,7 @@ function NavBar() {
                     <li className="nav-item active">
                         <Link className="nav-link" to="/cart">
                             <FontAwesomeIcon className="mx-1" icon={faShoppingCart} />
-                            Cart
+                            Cart({props.items.length})
                         </Link>
                     </li>
                     <li className="nav-item">
