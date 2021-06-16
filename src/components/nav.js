@@ -1,31 +1,44 @@
 import React from 'react';
-import { Link, useHistory  } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { faEdit } from '@fortawesome/free-regular-svg-icons';
+import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+import logo from './trolley.svg'
 
 import '../App.css';
 
 
-function NavBar(){
+function NavBar() {
     let history = useHistory();
 
-    const handlePath  = ()=> {
+    const handlePath = () => {
+
         history.push('/about')
     }
 
-    return(
-        <div className="nav-bar">
-            <div>App logo</div>
-            <div className="d-flex justify-content-between nav-options">
-                <p onClick={()=>handlePath()}>
-                    About link
-                    {/* <Link to="/about">About link</Link> */}
-                    {/* <a href="/about">About</a> */}
-                </p>
-                <p> 
-                    <Link to="/contact">Contact us link</Link>
-                    {/* <a href="/contact">Contact us</a> */}
-                </p>
+    return (
+        <nav className="navbar navbar-expand-lg navbar-light bg-light">
+            <a className="navbar-brand text-success font-weight-bold" href="/">
+                <img src={logo} alt="" width="30" height="24" className="d-inline-block align-text-top mx-1" />
+                Shooping Cart</a>
+            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span className="navbar-toggler-icon"></span>
+            </button>
+
+            <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul className="navbar-nav ml-auto">
+                    <li className="nav-item active">
+                        <Link className="nav-link" to="/cart">
+                            <FontAwesomeIcon className="mx-1" icon={faShoppingCart} />
+                            Cart
+                        </Link>
+                    </li>
+                    <li className="nav-item">
+                        <Link className="nav-link disabled" to="/">username</Link>
+                    </li>
+                </ul>
             </div>
-        </div>
+        </nav>
     )
 }
 

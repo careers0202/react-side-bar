@@ -1,7 +1,7 @@
 
 .nav-bar{
   height: 50px;
-    background: gray;
+    background: floralwhite;
     padding: 15px;
     color: blue;
     display: flex;
@@ -12,9 +12,15 @@
     padding: 0 20px;
   }
 
+.navbar {
+  position: sticky;
+  top: 0;
+  font-style: italic;
+}
+
 .sidebar{
   width: 200px;
-  background: cadetblue;
+  background: #4264b1;
   height: 100vh;
   padding: 10px;
   color: white;
@@ -22,13 +28,66 @@
 .main-sec {
   flex: 1;
   background-color: lightgray;
+  position: absolute;
+  left: 50%;
+  top: 50%;
 }
 
 .cart-icon {
   color: green;
   font-size: 20px;
 }
-.svg-inline--fa{
-  color:yellow;
 
+.shopping-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.item {
+  width: 360px;
+  margin: 20px;
+  border-radius: 10px;
+  /* position: relative; */
+}
+.item > p {
+  min-height: 50px;
+}
+.item > img {
+  height: 100px;
+}
+
+.addtocart {
+  /* position: absolute; */
+  bottom: 30px;
+  right: 30px;
+}
+
+input {
+  height: 45px;
+  border-radius: 4px;
+  border: 1px solid rgb(13, 0, 128);
+  margin: 10px 0;
+}
+
+.login{
+  width: 500px;
+  height: 400px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid darkgray;
+  border-radius: 10px;
+}
+
+input::placeholder {
+  text-align: center;
+  font-style: italic;
+}
+.loading {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.6rem;
 }

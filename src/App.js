@@ -13,6 +13,7 @@ import NotFound from './components/NotFound';
 import NavBar from './components/nav';
 import Transaction from './components/task';
 import Sidebar from './components/sideBar';
+import Login from './components/login'
 
 class App extends Component {
 
@@ -30,21 +31,21 @@ class App extends Component {
         <Router>
           <NavBar />
           <div className="d-flex justify-space-between">
-            <div>
+            {/* <div>
               <Sidebar />
-            </div>
+            </div> */}
 
-            <div className="text-center main-sec">
-              <Switch>
-                <Route exact path="/" component={Home} />
-                <Route path="/about" component={About} />
-                <Route path="/contact" component={Contact} />
-                <Route path="/transaction/:id/:item" component={Transaction} />
 
-                <Route path="/404" component={NotFound} />
-                <Redirect to="/404" />
-              </Switch>
-            </div>
+            <Switch>
+              <Route exact path="/" component={Login} />
+              <Route exact path="/home" component={Home} />
+              <Route path="/about" component={About} />
+              <Route path="/contact" component={Contact} />
+              <Route path="/transaction/:id/:item" component={Transaction} />
+
+              <Route path="/404" component={NotFound} />
+              <Redirect to="/404" />
+            </Switch>
           </div>
         </Router>
       </div>
